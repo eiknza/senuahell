@@ -1,0 +1,1 @@
+document.addEventListener('click',e=>{const el=e.target.closest('button,a,[role=button]');if(!el)return;const audio=new Audio('/sound/click.wav');audio.volume=.35;audio.play().catch(()=>{});});

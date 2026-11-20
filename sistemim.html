@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080511">
+  <meta name="description" content="SenuAhell bilgisayar sistemi ve yayın ekipmanları.">
+  <title>SenuAhell | Sistemim ♡</title>
+  <style>
+    :root{--bg:#080511;--purple:#a855f7;--pink:#e044ed;--text:#fbf8ff;--muted:#bcb3cf;--line:rgba(190,117,255,.22)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -10%,rgba(168,85,247,.18),transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}
+    .topbar{height:72px;position:sticky;top:0;z-index:10;background:rgba(7,4,15,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1320px;height:100%;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:23px;font-weight:950;color:#e879f9;text-shadow:0 0 16px #d946ef66;letter-spacing:-.6px}
+    .brand{position:relative;display:inline-flex;align-items:center;gap:5px;font-size:25px;font-weight:1000;letter-spacing:-1.1px;color:#fff;text-shadow:0 0 12px rgba(217,70,239,.45);background:linear-gradient(100deg,#fff 8%,#e9a8ff 38%,#c084fc 62%,#fff 88%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:brandShine 5s linear infinite;transition:filter .25s,transform .25s}.brand:hover{transform:translateY(-2px);filter:drop-shadow(0 0 10px #d946ef)}.brand-spark{font-size:15px;-webkit-text-fill-color:#f0abfc;animation:sparkPulse 2s ease-in-out infinite}@keyframes brandShine{to{background-position:220% center}}@keyframes sparkPulse{0%,100%{opacity:.55;transform:scale(.85) rotate(0)}50%{opacity:1;transform:scale(1.2) rotate(25deg)}}@media(prefers-reduced-motion:reduce){.brand,.brand-spark,}
+    .links{display:flex;gap:32px;align-items:center;font-size:14px;font-weight:750}.links a{height:72px;display:flex;align-items:center;border-bottom:3px solid transparent}.links a:hover,.links a.active{border-color:var(--pink)}
+    .follow{padding:12px 19px;border-radius:11px;background:linear-gradient(110deg,#9333ea,#d946ef);font-size:13px;font-weight:850;box-shadow:0 0 20px #c026d344}
+    .wrap{max-width:1250px;margin:auto;padding:34px 26px 76px}.back{display:inline-flex;align-items:center;gap:8px;color:#e9b7ff;font-weight:750;font-size:13px;margin-bottom:22px}.back:hover{color:white}
+    .page-hero{position:relative;overflow:hidden;padding:34px 38px;margin-bottom:34px;border:1px solid rgba(192,132,252,.3);border-radius:22px;background:radial-gradient(ellipse at 88% 40%,rgba(217,70,239,.22),transparent 36%),linear-gradient(115deg,#17102a,#0d0a1b 65%,#160b24);box-shadow:0 18px 55px rgba(0,0,0,.22)}
+    .page-hero:after{content:"♡";position:absolute;right:42px;top:50%;transform:translateY(-50%);font-size:140px;line-height:1;color:#d946ef;opacity:.1;text-shadow:0 0 35px #d946ef;pointer-events:none}
+    .eyebrow{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:#e879f9;font-weight:900}.page-hero h1{font-size:clamp(34px,5vw,48px);letter-spacing:-1.5px;margin:8px 0 9px}.page-hero p{margin:0;color:var(--muted);font-size:14px;line-height:1.65;max-width:560px}
+    .product-section{margin-top:34px}.section-heading{display:flex;align-items:center;gap:13px;margin:0 0 17px;padding-bottom:13px;border-bottom:1px solid rgba(168,85,247,.18)}.section-heading>span{height:42px;width:42px;display:grid;place-items:center;border-radius:12px;background:rgba(168,85,247,.14);font-size:22px}.section-heading h2{margin:0;font-size:22px}.section-heading p{margin:3px 0 0;color:var(--muted);font-size:12px}
+    .product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .product-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:17px;background:linear-gradient(150deg,rgba(23,15,42,.98),rgba(10,8,21,.99));box-shadow:0 10px 28px rgba(0,0,0,.16),inset 0 1px rgba(255,255,255,.025);transition:transform .22s,border-color .22s,box-shadow .22s}
+    .product-card:hover{transform:translateY(-5px);border-color:rgba(232,121,249,.65);box-shadow:0 16px 35px rgba(110,35,160,.2)}
+    .product-photo-link{height:190px;display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(ellipse at 50% 60%,rgba(168,85,247,.19),transparent 65%),linear-gradient(135deg,#171127,#0c0a19);border-bottom:1px solid rgba(168,85,247,.15);position:relative}
+    .product-photo-link:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.035);border-radius:11px;pointer-events:none}
+    .product-photo{position:relative;z-index:1;max-width:88%;max-height:150px;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 8px 15px rgba(0,0,0,.35))}
+    .product-details{padding:16px 17px 17px}.product-category{display:inline-block;font-size:10px;color:#e9a5fa;text-transform:uppercase;letter-spacing:1.5px;font-weight:900}
+    .product-details h3{font-size:15px;line-height:1.45;min-height:44px;margin:7px 0 14px;font-weight:800}
+    .shop-link{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:10px 12px;border:1px solid rgba(217,70,239,.42);border-radius:10px;color:#f1c4ff;background:rgba(168,85,247,.1);font-size:12px;font-weight:850;transition:.2s}
+    .shop-link:hover{background:linear-gradient(100deg,#9333ea,#c026d3);border-color:transparent;color:white;box-shadow:0 6px 20px #a855f744}
+    .product-photo-link.image-missing:before{content:"Ürün görseli yüklenemedi";position:absolute;color:#b9a7ce;font-size:12px;font-weight:700}
+    .note{margin-top:36px;text-align:center;color:#d8b4fe;font-size:14px;font-weight:750}.footer{border-top:1px solid var(--line);padding:22px;text-align:center;color:#aaa0ba;font-size:12px}.footer b{color:#e879f9}
+    @media(max-width:950px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:700px){.topbar{height:auto;min-height:64px}.nav{padding:12px 18px;flex-wrap:wrap}.brand{font-size:22px}.links{order:3;width:100%;justify-content:center;gap:17px;font-size:12px}.links a{height:34px}.follow{padding:10px 13px}.wrap{padding:24px 16px 52px}.page-hero{padding:27px 22px}.page-hero:after{right:14px;font-size:95px;opacity:.07}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product-photo-link{height:145px;padding:12px}.product-photo{max-height:115px;max-width:92%}.product-details{padding:12px}.product-details h3{font-size:13px;min-height:56px}.shop-link{font-size:11px;padding:9px 6px}}
+    @media(max-width:390px){.product-grid{grid-template-columns:1fr}.product-photo-link{height:175px}.product-photo{max-height:140px}}
+
+    .topbar{isolation:isolate;overflow:visible;box-shadow:0 8px 30px rgba(0,0,0,.28),0 1px 22px rgba(168,85,247,.08)}.topbar:before{content:"";position:absolute;z-index:-1;left:-35%;top:0;width:70%;height:1px;background:linear-gradient(90deg,transparent,#d946ef,#a855f7,transparent);animation:navGlow 6s ease-in-out infinite alternate}.topbar:after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 15%,rgba(168,85,247,.055) 48%,transparent 75%);background-size:220% 100%;animation:navSweep 10s linear infinite}.links a{position:relative;transition:color .22s,text-shadow .22s}.links a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#a855f7,#f0abfc);box-shadow:0 0 12px #d946ef;transform:scaleX(0);transform-origin:center;transition:transform .25s}.links a:hover:after,.links a.active:after{transform:scaleX(1)}.brand{transition:filter .25s,transform .25s}.brand:hover{transform:translateY(-2px);filter:drop-shadow(0 0 12px #d946ef)}.page-hero{box-shadow:0 18px 55px rgba(0,0,0,.28),0 0 32px rgba(168,85,247,.1);background-size:140% 140%;animation:heroGradient 12s ease-in-out infinite alternate}.page-hero:before{content:"";position:absolute;inset:-40%;pointer-events:none;background:radial-gradient(circle at 25% 45%,rgba(168,85,247,.18),transparent 28%),radial-gradient(circle at 75% 55%,rgba(217,70,239,.13),transparent 30%);animation:heroDrift 12s ease-in-out infinite alternate}.page-hero>*{position:relative;z-index:1}.product-section{position:relative}.section-heading>span{box-shadow:0 0 20px rgba(168,85,247,.16)}@keyframes navGlow{0%{left:-35%;opacity:.45}100%{left:65%;opacity:1}}@keyframes navSweep{0%{background-position:120% 0}100%{background-position:-120% 0}}@keyframes heroDrift{0%{transform:translate3d(-2%,0,0) scale(.96);opacity:.65}100%{transform:translate3d(2%,1%,0) scale(1.05);opacity:1}}@keyframes heroGradient{0%{background-position:0% 50%}100%{background-position:100% 50%}}@media(prefers-reduced-motion:reduce){.topbar:before,.topbar:after,.page-hero{animation:none}.page-hero:before{animation:none}.links a:after{transition:none}}
+  
+.topbar{height:72px;position:sticky;top:0;z-index:30;background:rgba(7,4,15,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(190,117,255,.22)}.nav{max-width:1510px;height:100%;margin:auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{position:relative;display:inline-flex;align-items:center;gap:5px;font-size:25px;font-weight:1000;letter-spacing:-1.1px;color:#fff;text-shadow:0 0 12px rgba(217,70,239,.45);background:linear-gradient(100deg,#fff 8%,#e9a8ff 38%,#c084fc 62%,#fff 88%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:brandShine 5s linear infinite}.brand-spark{font-size:15px;-webkit-text-fill-color:#f0abfc}.links{display:flex;align-items:center;gap:32px;font-size:14px;font-weight:750}.links a{height:72px;display:flex;align-items:center;border-bottom:3px solid transparent}.links a:hover,.links a.active{border-color:#e044ed}.nav-actions{display:flex;align-items:center;gap:12px}.follow{padding:12px 19px;border-radius:11px;background:linear-gradient(110deg,#9333ea,#d946ef);font-size:13px;font-weight:850;box-shadow:0 0 20px #c026d344}.menu{display:none;background:transparent;border:1px solid rgba(190,117,255,.22);color:white;border-radius:9px;padding:8px 11px;font-size:20px;cursor:pointer}@keyframes brandShine{to{background-position:220% center}}@media(max-width:700px){.topbar{height:auto;min-height:64px}.nav{min-height:64px;padding:10px 18px;flex-wrap:wrap}.brand{font-size:22px}.menu{display:block}.links{display:none;order:3;width:100%;flex-direction:column;align-items:stretch;gap:0}.links.open{display:flex}.links a{height:42px;border-bottom:1px solid rgba(190,117,255,.16)}.follow{padding:10px 13px;font-size:12px}}
+</style>
+<link rel="stylesheet" href="auth-header.css"><link rel="stylesheet" href="purple-atmosphere.css?v=3"></head>
+<body>
+  <header class="topbar"><nav class="nav">
+  <a class="brand" href="/" aria-label="SenuAhell ana sayfa">SenuAhell<span class="brand-spark">✦</span></a>
+  <div class="links" id="navLinks"><a href="/">Ana Sayfa</a><a class="active" href="sistemim.html">Sistemim</a><a href="kick.html">Klipler &amp; Yayınlar</a><a href="instagram.html">Instagram</a><a href="youtube.html">YouTube</a></div>
+  <div class="nav-actions"><button class="menu" id="menu" aria-label="Menüyü aç">☰</button></div>
+</nav></header>
+  <main class="wrap">
+    <a class="back" href="/">← Ana Sayfaya Dön</a>
+    <section class="page-hero">
+      <div class="eyebrow">SENUAHELL • SETUP</div>
+      <h1>🖥️ Sistemim ♡</h1>
+      <p>Oyun dünyasındaki silah arkadaşlarım... Kullandığım tüm parçaları ve ekipmanları aşağıda inceleyebilir, alışveriş bağlantılarından ürünleri bulabilirsin. ♡</p>
+    </section>
+
+    <section class="product-section">
+      <div class="section-heading"><span>🖥️</span><div><h2>PC</h2><p>Bilgisayarımın parçaları</p></div></div>
+      <div class="product-grid">
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://artline.ua/storage/images/products/7012/gallery/89610/1400_products_1668068938623323_0.webp" alt="AMD Ryzen 5 3600" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">CPU</span>
+          <h3>Ryzen 5 3600</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=AMD+Ryzen+5+3600" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://cdn.awsli.com.br/600x1000/2557/2557636/produto/334368783/ezgif-6af40acd37103b-b3i7s0vqaj.png" alt="NVIDIA GeForce RTX 4060" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">GPU</span>
+          <h3>RTX 4060</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=NVIDIA+GeForce+RTX+4060" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://down-ph.img.susercontent.com/file/sg-11134201-7rep8-m2izqqw6hpdo12" alt="32GB DDR4 Desktop RAM" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">RAM</span>
+          <h3>32 GB</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=32GB+DDR4+desktop+RAM" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://s3.ap-southeast-3.amazonaws.com/hartono-mh1/images/detailed/428/67D4GAC3WW-4_copy.WEBP" alt="Lenovo Legion 24.5 320Hz monitor" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">Ana Monitör</span>
+          <h3>Lenovo Legion 24.5" — 320Hz</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=Lenovo+Legion+24.5+320Hz+monitor" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_168074078/fee_786_587_png" alt="Casper Excalibur 240Hz monitor" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">Yan Monitör</span>
+          <h3>Excalibur — 240Hz</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=Casper+Excalibur+240Hz+monitor" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      </div>
+    </section>
+    <section class="product-section">
+      <div class="section-heading"><span>🎮</span><div><h2>Ekipman</h2><p>Yayın ve oyun ekipmanlarım</p></div></div>
+      <div class="product-grid">
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://content.rozetka.com.ua/goods/images/big/533973895.jpg" alt="VXE R1 SE+ mouse" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">Mouse</span>
+          <h3>VXE R1 SE+</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=VXE+R1+SE%2B" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://cdn.dsmcdn.com/mnresize/620/920/ty1627/prod/QC/20250121/12/e68af479-93da-3317-85fd-544bfb91e259/1_org_zoom.jpg" alt="Blueforce Runner RGB Blue Switch keyboard" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">Klavye</span>
+          <h3>Blueforce Runner — RGB Mekanik / Blue Switch</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=Blueforce+Runner+RGB+Blue+Switch" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://www.maxgaming.gg/bilder/artiklar/37488.jpg?m=1764854786" alt="Wraith N9 Ultra headset" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">Kulaklık</span>
+          <h3>Wraith N9 Ultra</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=Wraith+N9+Ultra" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://www.lastvoice.com.tr/uploads/urunler/macbook-icin-usb-rgb-mikrofon-lastvoice-bm350-rgb-usb-pc-mikrofon-46304.webp" alt="Lastvoice BM350 microphone" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">Mikrofon</span>
+          <h3>Lastvoice BM350</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=Lastvoice+BM350" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-photo-link">
+          <img class="product-photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/webcams/brio-100/gallery/brio-100-gallery-rose-1.png" alt="Logitech Brio 100 webcam" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div class="product-details">
+          <span class="product-category">Webcam</span>
+          <h3>Logitech Brio 100</h3>
+          <a class="shop-link" href="https://www.google.com/search?tbm=shop&q=Logitech+Brio+100" target="_blank" rel="noopener noreferrer">Alışverişte Bul ↗</a>
+        </div>
+      </article>
+      </div>
+    </section>
+    <p class="note">SenuAhell ♡</p>
+  </main>
+  <footer class="footer"><b>SENUAHELL</b> © <span id="year"></span> • Tüm hakları saklıdır.</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();document.getElementById("menu").addEventListener("click",function(){document.getElementById("navLinks").classList.toggle("open")});document.querySelectorAll(".links a").forEach(function(link){link.addEventListener("click",function(){document.getElementById("navLinks").classList.remove("open")})});(function(){const clickSound=new Audio("sound/click.wav");clickSound.preload="auto";clickSound.load();document.addEventListener("click",function(event){if(!event.isTrusted||!event.target.closest('a,button,input[type="button"],input[type="submit"],select,summary,[role="button"]'))return;const sound=clickSound.cloneNode();sound.volume=0.55;const playback=sound.play();if(playback&&playback.catch)playback.catch(function(){});},true)})();
+
+</script>
+<script src="auth-header.js"></script><script src="click-sound.js"></script><script src="purple-atmosphere.js?v=3"></script></body>
+</html>

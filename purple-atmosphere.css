@@ -1,0 +1,12 @@
+:root{color-scheme:dark;--purple-atmosphere:#a855f7;--purple-atmosphere-pink:#d946ef;--purple-scroll-progress:0}
+html{background:#07040f;scroll-behavior:smooth}
+body{position:relative;isolation:isolate;background:transparent!important}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(180deg,rgba(7,3,15,calc(.38 + var(--purple-scroll-progress)*.18)) 0%,rgba(7,3,15,calc(.25 + var(--purple-scroll-progress)*.22)) 30%,rgba(7,3,15,calc(.58 + var(--purple-scroll-progress)*.2)) 72%,rgba(7,3,15,.94) 100%),url("image/purple-cat-bg.webp");background-size:cover,cover;background-position:center,center calc(30% + var(--purple-scroll-progress)*8%);background-repeat:no-repeat;background-attachment:fixed,fixed;opacity:1;will-change:background-position}
+body::after{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 12% 24%,rgba(147,51,234,.3),transparent 26%),radial-gradient(ellipse at 86% 30%,rgba(192,38,211,.23),transparent 28%),radial-gradient(ellipse at 52% 82%,rgba(109,40,217,.28),transparent 34%),radial-gradient(ellipse at 72% 72%,rgba(168,85,247,.18),transparent 24%);background-size:140% 140%;filter:blur(35px);opacity:calc(.62 + var(--purple-scroll-progress)*.2);animation:purpleMistDrift 15s ease-in-out infinite alternate;will-change:background-position,opacity}
+@keyframes purpleMistDrift{0%{background-position:0% 0%}50%{background-position:65% 45%}100%{background-position:100% 100%}}
+/* Üst bölüm ve navigasyon arka planla birleşir; içerik kartlarının tasarımı korunur. */
+body>header,.topbar,.site-header,.header{background:rgba(7,3,15,.34)!important;border-color:rgba(192,132,252,.13)!important;backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px)}
+.hero,.hero-live{background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+.hero::before,.hero::after,.hero-live::before,.hero-live::after{background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+@media(prefers-reduced-motion:reduce){body::after{animation:none}html{scroll-behavior:auto}}
+@media(max-width:700px){body::before{background-attachment:scroll,scroll;background-position:center,center top;background-size:cover,auto 100vh}}
